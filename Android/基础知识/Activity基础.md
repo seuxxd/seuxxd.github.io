@@ -1,6 +1,5 @@
-# Activity基础知识以及八股文
+# Activity基础知识
 
-## 入门知识
 这一部分主要是非常浅显的基础知识，一般为在校生需要掌握的部分。社招朋友们也需要简单回顾下
 
 
@@ -70,3 +69,16 @@ Activity中实际提供了两个相关的回调方法，分别是onSaveInstanceS
 - onRestoreInstanceState方法是恢复数据的回调，其调用时机目前都保持版本一致
 
     - 目前都是在onStart回调之后触发（具体代码在ActivityThread#handleStartActivity中）
+
+### Activity常见的启动标记位（Flag）
+
+- FLAG_ACTIVITY_NEW_TASK 使用此标记启动的Activity默认会新启动任务栈
+- FLAG_ACTIVITY_CLEAR_TASK 使用此标记启动的Activity会将关联的task清空，并且此Activity成为新的root
+- FLAG_ACTIVITY_SINGLE_TOP 同launchMode中的singleTop
+- FLAG_ACTIVITY_CLEAR_TOP 使用此标记启动的Activity会清空其上方的所有Activity
+
+#### 相关面试题
+
+1. flag和launchMode配置的启动模式之间有什么联系和区别？
+
+2. AndroidManifest.xml中配置和代码中配置后，哪个优先级更高？
