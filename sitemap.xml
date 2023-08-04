@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/08/05/hello-world/</loc>
+    <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2023-08-04</lastmod>
     
@@ -29,5 +29,12 @@
 
   
 
+  
+  <url>
+    <loc>http://example.com/categories/%E4%B8%AA%E4%BA%BA%E5%BB%BA%E7%AB%99/</loc>
+    <lastmod>2023-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
