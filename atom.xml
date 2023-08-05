@@ -6,7 +6,7 @@
   <link href="http://seuxxd.github.io/atom.xml" rel="self"/>
   
   <link href="http://seuxxd.github.io/"/>
-  <updated>2023-08-04T18:11:55.750Z</updated>
+  <updated>2023-08-05T09:48:07.074Z</updated>
   <id>http://seuxxd.github.io/</id>
   
   <author>
@@ -18,11 +18,19 @@
   
   <entry>
     <title>基于Github-Pages &amp; Hexo搭建个人博客</title>
-    <link href="http://seuxxd.github.io/2023/08/05/first-blog/"/>
-    <id>http://seuxxd.github.io/2023/08/05/first-blog/</id>
+    <link href="http://seuxxd.github.io/2023/08/05/build-my-net/"/>
+    <id>http://seuxxd.github.io/2023/08/05/build-my-net/</id>
     <published>2023-08-04T16:50:35.464Z</published>
-    <updated>2023-08-04T18:11:55.750Z</updated>
+    <updated>2023-08-05T09:48:07.074Z</updated>
     
+    <content type="html"><![CDATA[<p><strong>本文章是基于Windows11平台进行本地搭建和部署</strong></p><h2 id="1-准备Hexo环境"><a href="#1-准备Hexo环境" class="headerlink" title="1.准备Hexo环境"></a>1.准备Hexo环境</h2><h3 id="1-1-准备NodeJS环境"><a href="#1-1-准备NodeJS环境" class="headerlink" title="1.1 准备NodeJS环境"></a>1.1 准备NodeJS环境</h3><p>打开 <a href="https://nodejs.org/en">https://nodejs.org/en</a> 下载NodeJS并按照安装提示配置环境变量</p><p>安装完成后，打开Shell&#x2F;PowerShell输入命令<code>node --version</code>查看是否安装成功</p><h3 id="1-2-安装hexo"><a href="#1-2-安装hexo" class="headerlink" title="1.2 安装hexo"></a>1.2 安装hexo</h3><p>打开Shell&#x2F;PowerShell，输入 <code>npm install -g hexo-cli</code> 开始安装hexo脚手架</p><p>创建要保存博客的文件夹，并打开目录 </p><p><code>hexo init 你的目录名</code></p><p><code>cd 你的目录名</code></p><p><code>npm install</code></p><p>至此，初始化完成，可以通过输入命令 <code>hexo g</code> 和 <code>hexo s</code>来生成渲染并创建本地Server，成功后在<code>localhost:4000</code>既可以查看初始效果</p><h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><h3 id="2-1-基础配置"><a href="#2-1-基础配置" class="headerlink" title="2.1 基础配置"></a>2.1 基础配置</h3><p>hexo初始化完成时，会生成一个*_config.yml*文件，该文件即是全局配置文件</p><p>可以修改一些常用的配置，来进一步美化博客样式</p><ul><li>title 表示打开网站时，浏览器标题卡显示的内容</li><li>url 后续部署时使用的域名</li><li>author 作者</li></ul><h3 id="2-2-主题配置"><a href="#2-2-主题配置" class="headerlink" title="2.2 主题配置"></a>2.2 主题配置</h3><p>配置文件中存在一个theme属性，通过配置该属性可以调整主题</p><p>hexo支持的所有主题都可以在官网中查看 <a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p><p>选择合适的主题比如<em>pure&#x2F;fabric</em>等，需要经过以下几步骤</p><ul><li>寻找其theme下载地址，一般都在github上存在，将其git clone url themes&#x2F;name 目录中</li><li>将_config.yml中的theme属性替换为下载的属性名即可</li><li>其他细节配置方式可以查看对应主题的设置文档，整体流程都是一致的</li></ul><h3 id="2-3-使用hexo-themes-pure时的注意事项"><a href="#2-3-使用hexo-themes-pure时的注意事项" class="headerlink" title="2.3 使用hexo-themes-pure时的注意事项"></a>2.3 使用hexo-themes-pure时的注意事项</h3><p>由于配置了<em>tags&#x2F;categories</em>属性，所以需要把themes&#x2F;pure&#x2F;_source目录中对应的tags&#x2F;categories目录与根目录的source目录合并，这样才不会出现CANNOT GET &#x2F;tags或者CANNOT GET &#x2F;categories 错误</p><h2 id="3-开始创作"><a href="#3-开始创作" class="headerlink" title="3.开始创作"></a>3.开始创作</h2><h3 id="3-1-创建文章"><a href="#3-1-创建文章" class="headerlink" title="3.1 创建文章"></a>3.1 创建文章</h3><p>由于默认创建的都是md文件，这里不再赘述语法问题</p><p>通过执行 <code>hexo new page name</code>创建一片新的文章，同时目录中会生成多个文件</p><ul><li>同名的目录，用于存放资源</li><li>同名的md文件，用于编写博客内容</li></ul><h3 id="3-2-本地预览"><a href="#3-2-本地预览" class="headerlink" title="3.2 本地预览"></a>3.2 本地预览</h3><p>如果使用VSCode编写，可以先用md查看查看预览效果</p><p>如果想查看网页中的效果，可以先本地部署查看</p><p><code>hexo clean</code></p><p><code>hexo g</code></p><p><code>hexo s</code></p><p><code>open localhost:4000</code>查看渲染效果</p><h2 id="4-远端部署"><a href="#4-远端部署" class="headerlink" title="4.远端部署"></a>4.远端部署</h2><h3 id="4-1-开启GitHub-Pages功能"><a href="#4-1-开启GitHub-Pages功能" class="headerlink" title="4.1 开启GitHub-Pages功能"></a>4.1 开启GitHub-Pages功能</h3><p>具体操作详见GitHub提供的操作指南</p><p><code>https://pages.github.com/</code></p><h3 id="4-2-一键部署"><a href="#4-2-一键部署" class="headerlink" title="4.2 一键部署"></a>4.2 一键部署</h3><p>通过命令安装插件 <code>npm install hexo-deployer-git --save</code></p><p>打开*_config.yml*文件，找到deploy配置项</p><ul><li>type 使用git</li><li>repo 使用你github pages的全称，即<a href="https://github.com/name/name.github.io">https://github.com/name/name.github.io</a></li><li>branch: 使用的分支名称，建议不要使用master&#x2F;main，避免冲掉原分支代码</li></ul><p>在上述流程配置完成后，可通过<code>hexo g -d</code>完成部署</p><p>在Github Pages Settings页面，可以配置deploy使用的分支名</p><p>至此，可以打开GitHub Pages查看最终的部署效果</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>所有上述操作都可以在hexo官网查询</p><p><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p><p>部分细节没有描述，过程的记录建立在一定的代码基础上</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;本文章是基于Windows11平台进行本地搭建和部署&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-准备Hexo环境&quot;&gt;&lt;a href=&quot;#1-准备Hexo环境&quot; class=&quot;headerlink&quot; title=&quot;1.准备Hexo环境&quot;&gt;&lt;/a&gt;1.准备H</summary>
+      
     
     
     
