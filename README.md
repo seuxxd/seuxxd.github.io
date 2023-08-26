@@ -1,3 +1,3 @@
-# ruiheng.learn
+# ruiheng.tech
 建站
-https://ruiheng.learn
+https://ruiheng.tech
